@@ -119,6 +119,7 @@ jobs:
         #echo "自定义项=y" >> .config
         
         sed -i 's/bintray\.com\/htop\/source\/download_file?file_path=/github\.com\/hanwckf\/rt-n56u\/blob\/master\/trunk\/user\/htop\//g' ./user/htop/Makefile
+        sed -i 's/tar zxf/tar xf/g' ./user/htop/Makefile
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
