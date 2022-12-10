@@ -133,6 +133,9 @@ jobs:
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_ARIA=y/CONFIG_FIRMWARE_INCLUDE_ARIA=n/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n/g' .config
         
+        #集成xray执行文件，可以代替v2ray，大小5M多，如果闪存太小不够还是建议使用v2ray
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config 
+        
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_RPL2TP=n/CONFIG_FIRMWARE_INCLUDE_RPL2TP=y/g' .config
         #########################################################################################
