@@ -137,7 +137,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config 
         
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g' .config
-        sed -i 's/CONFIG_FIRMWARE_INCLUDE_RPL2TP=n/CONFIG_FIRMWARE_INCLUDE_RPL2TP=y/g' .config
+        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_RPL2TP=n/CONFIG_FIRMWARE_INCLUDE_RPL2TP=y/g' .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
