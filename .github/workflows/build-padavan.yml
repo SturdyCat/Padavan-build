@@ -37,7 +37,7 @@ jobs:
         if [ $KERNEL = "4.4" ] ; then
         git clone --depth=1 https://github.com/MeIsReallyBa/padavan-4.4.git /opt/rt-n56u
         else
-        git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/SturdyCat/rt-n56u.git /opt/rt-n56u
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
@@ -118,7 +118,7 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         
-        sed -i 's#bintray.com/htop/source/download_file?file_path=#raw.githubusercontent.com/hanwckf/rt-n56u/master/trunk/user/htop/#' ./user/htop/Makefile
+        #sed -i 's#bintray.com/htop/source/download_file?file_path=#raw.githubusercontent.com/hanwckf/rt-n56u/master/trunk/user/htop/#' ./user/htop/Makefile
 
         sed -i 's/CONFIG_FIRMWARE_ENABLE_UFSD=y/CONFIG_FIRMWARE_ENABLE_UFSD=n/g' .config
         #sed -i 's/CONFIG_FIRMWARE_ENABLE_EXT2=y/CONFIG_FIRMWARE_ENABLE_EXT2=n/g' .config
