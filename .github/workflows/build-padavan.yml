@@ -122,6 +122,11 @@ jobs:
         
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_IFB=n/CONFIG_FIRMWARE_INCLUDE_IFB=y/g' .config
+        echo "CONFIG_NET_SCH_INGRESS=y" >> .config
+        echo "CONFIG_NET_SCH_HTB=y" >> .config
+        echo "CONFIG_NET_SCH_FQ_CODEL=y" >> .config
+        echo "CONFIG_NET_ACT_MIRRED=y" >> .config
+        echo "CONFIG_NET_CLS_U32=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
