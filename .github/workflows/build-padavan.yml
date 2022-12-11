@@ -118,29 +118,8 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         
-        #sed -i 's#bintray.com/htop/source/download_file?file_path=#raw.githubusercontent.com/hanwckf/rt-n56u/master/trunk/user/htop/#' ./user/htop/Makefile
-
-        #sed -i 's/CONFIG_FIRMWARE_ENABLE_UFSD=y/CONFIG_FIRMWARE_ENABLE_UFSD=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_ENABLE_EXT2=y/CONFIG_FIRMWARE_ENABLE_EXT2=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_ENABLE_EXT3=y/CONFIG_FIRMWARE_ENABLE_EXT3=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_UVC=y/CONFIG_FIRMWARE_INCLUDE_UVC=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_AUDIO=y/CONFIG_FIRMWARE_INCLUDE_AUDIO=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_LPRD=y/CONFIG_FIRMWARE_INCLUDE_LPRD=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_U2EC=y/CONFIG_FIRMWARE_INCLUDE_U2EC=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_SMBD=y/CONFIG_FIRMWARE_INCLUDE_SMBD=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_SMBD36=y/CONFIG_FIRMWARE_INCLUDE_SMBD36=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_FTPD=y/CONFIG_FIRMWARE_INCLUDE_FTPD=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_ARIA=y/CONFIG_FIRMWARE_INCLUDE_ARIA=n/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n/g' .config
-        
-
-
-        #集成xray执行文件，可以代替v2ray，大小5M多，如果闪存太小不够还是建议使用v2ray
-        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config 
-        
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_IFB=n/CONFIG_FIRMWARE_INCLUDE_IFB=y/g' .config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_RPL2TP=n/CONFIG_FIRMWARE_INCLUDE_RPL2TP=y/g' .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
