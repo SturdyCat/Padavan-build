@@ -120,6 +120,7 @@ jobs:
 
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
         echo "CONFIG_FIRMWARE_INCLUDE_FQ_CODEL=y" >> .config
+        sed -i 's/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g' .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
