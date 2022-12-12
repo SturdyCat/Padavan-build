@@ -29,7 +29,15 @@ jobs:
         sudo apt-get update
         sudo apt-get -y install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot \
         cpio git python-docutils gettext automake autopoint texinfo build-essential help2man \
-        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget golang
+        pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget 
+        sudo wget https://golang.google.cn/dl/go1.19.4.linux-amd64.tar.gz
+        sudo tar xfz go1.19.4.linux-amd64.tar.gz -C /usr/local
+        sudo echo “export GOROOT=/usr/local/go” >> /etc/profile
+        sudo echo “export GOPATH=$HOME/gowork” >> /etc/profile
+        sudo echo “export GOBIN=$GOPATH/bin” >> /etc/profile
+        sudo echo “export PATH=$GOPATH:$GOBIN:$GOROOT/bin:$PATH” >> /etc/profile
+        sudo source /etc/profile
+        sudo rm go1.19.4.linux-amd64.tar.gz
     - name: Clone source code
       env:
         KERNEL: 3.4
