@@ -173,7 +173,7 @@ jobs:
         echo 'CONFIG_FIRMWARE_INCLUDE_RTL_SDR=n' >> .config
   
 
-        #echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
+        echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
          
         #########################################################################################
         sudo ./clear_tree
