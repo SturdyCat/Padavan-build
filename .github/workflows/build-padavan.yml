@@ -46,8 +46,6 @@ jobs:
         exit 1
         fi
         cp -f configs/templates/$TNAME.config .config
-        #sed -i 's/CONFIG_USB_SUPPORT=y/CONFIG_USB_SUPPORT=n/g' configs/boards/$TNAME/kernel-3.4.x.config
-        #sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         #sed -i "s/20201015/$(date '+%Y%m%d')/g" versions.inc
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
@@ -132,45 +130,11 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DUMP1090/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_RTL_SDR/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_IFB/d' .config
 
         echo 'CONFIG_FIRMWARE_INCLUDE_QOS=y' >> .config
+        echo 'CONFIG_FIRMWARE_INCLUDE_IFB=y' >> .config 
         echo "CONFIG_FIRMWARE_INCLUDE_SFE=y" >> .config
-
-        # echo 'CONFIG_FIRMWARE_ENABLE_USB=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_FTPD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SMBD36=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SMBD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_PARTED=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_HDPARM=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_U2EC=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_LPRD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_AUDIO=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SERIAL=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_UVC=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_FUSE=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_EXT4=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_EXT3=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_EXT2=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_EXFAT=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_FAT=n' >> .config
-        # echo 'CONFIG_FIRMWARE_ENABLE_UFSD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_OPENVPN=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_FFMPEG_NEW=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_ARIA=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_DOGCOM=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_MINIEAP=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_SERVER=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CLIENT=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_SOFTETHERVPN_CMD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_WIREGUARD=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_DUMP1090=n' >> .config
-        # echo 'CONFIG_FIRMWARE_INCLUDE_RTL_SDR=n' >> .config
   
 
         echo "CONFIG_FIRMWARE_INCLUDE_XRAY=y" >> .config #集成xray执行文件  ~4.5M
