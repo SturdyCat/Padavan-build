@@ -47,11 +47,8 @@ jobs:
         fi
         cp -f configs/templates/$TNAME.config .config
         #########################################################################################
-        sed -i "/CONFIG_FIRMWARE_INCLUDE_QOS/d" .config
-        echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" .config
-
-        sed -i "/CONFIG_FIRMWARE_INCLUDE_IFB/d" .config
-        echo "CONFIG_FIRMWARE_INCLUDE_IFB=y" .config 
+        sed -i "s/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g" .config
+        sed -i "s/CONFIG_FIRMWARE_INCLUDE_IFB=n/CONFIG_FIRMWARE_INCLUDE_IFB=y/g" .config
 
         sed -i "/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d" .config
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #科学上网插件
