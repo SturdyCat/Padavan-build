@@ -49,6 +49,7 @@ jobs:
         #########################################################################################
         sed -i "s/CONFIG_FIRMWARE_INCLUDE_QOS=n/CONFIG_FIRMWARE_INCLUDE_QOS=y/g" .config
         sed -i "s/CONFIG_FIRMWARE_INCLUDE_IFB=n/CONFIG_FIRMWARE_INCLUDE_IFB=y/g" .config
+        echo "CONFIG_FIRMWARE_INCLUDE_SFE=y" >> .config
 
         sed -i "/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d" .config
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config #科学上网插件
