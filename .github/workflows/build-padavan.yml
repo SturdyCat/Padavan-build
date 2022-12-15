@@ -62,7 +62,6 @@ jobs:
         sed -i "/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d" .config
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
 
-
         sed -i "/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d" .config        
         sed -i "/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d" .config
         sed -i "/CONFIG_FIRMWARE_ENABLE_FUSE/d" .config        
